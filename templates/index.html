@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        html, body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        h2 {
+            text-align: center;
+            color: rgb(172, 0, 0);
+            font-size: 200%;
+        }
+
+        p {
+            font-size: 140%;
+            text-align: center;
+            color: rgb(172, 0, 0);
+        }
+
+        form {
+            line-height: 250%;
+        }
+
+        div{
+            display: inline-block;
+            width: 45%;
+            text-align: right;
+            font-size: 150%;
+        }
+
+        span {
+            color:rgb(172, 0, 0);
+        }
+
+        input[type="submit"] {
+            text-align: center;
+            display:block;
+            margin: auto;
+            margin-top: 3%;
+            background-color: #5058a5;
+            font-size: 120%;
+            color: white;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+        }
+
+        
+        </style>
+     </head>
+     <body>
+         <h2>Blood Pressure Predictor</h2>
+         <p>Fill out the form to get your Blood Pressure estimate!</p>
+         <form action="#" method="post">
+            <div>
+                <label for="age">Age <span>*</span></label>
+            </div>
+            <input type="number" max="150" min="0" id="age" name="age" placeholder="Enter age in years" required><br>
+            <div>
+                <label for="weight">Weight <span>*</span></label>
+            </div>
+            <input type="number" max="600" min="0" id="weight" name="weight" placeholder="Enter weight in kg" required>
+            <input type="submit" value="Calculate">
+          </form>
+
+          {% if result %}
+          <p>{{result}}</p>
+          {% endif %}
+     </body>
+</html>
